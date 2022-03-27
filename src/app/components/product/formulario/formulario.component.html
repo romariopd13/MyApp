@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Criar novo Produto</h2>
+<mat-dialog-content>
+    <form [formGroup]="formulario">
+        <div class="col-lg-6">
+            <mat-form-field>
+                <input matInput formControlName="descricao" placeholder="Descrição">
+            </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+            <mat-form-field>
+                <input matInput formControlName="valor" placeholder="Valor">
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [disabled]="!formulario.valid" (click)="submit(formulario)">Salvar</button>
+    <button mat-button mat-dialog-close>Cancelar</button>
+</mat-dialog-actions>

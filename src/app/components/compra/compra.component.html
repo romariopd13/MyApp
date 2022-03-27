@@ -1,0 +1,62 @@
+<div class="pt-3 mb-3 border-bottom">
+    <h1 class="h2">Bem vindo!</h1>
+</div>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Atenção</strong> Para iniciar as compras informe o CPF do cliente, para o sistema verificar a situação do
+    mesmo.
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Informe o CPF do Cliente para verificar..."
+                        aria-label="Recipient's username" aria-describedby="basic-addon2" #cpf>
+                    <span class="input-group-text" id="basic-addon2" (click)="verificarCpf(cpf.value)">Verificar</span>
+                </div>
+                <div class="alert"
+                    [ngClass]="{'alert-danger' : !cliente, 'alert-warning' : !cliente?.inadimplente, 'alert-success' : cliente?.inadimplente}"
+                    role="alert" *ngIf="alert">
+                    <strong>{{!cliente ? "Nenhum Cliente encontrado! Verifique outro CPF" : !cliente?.inadimplente ?
+                        'Ops Cliente Inadimplente' : 'Cliente Aprovado'}}</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 mt-3" *ngIf="cliente?.inadimplente">
+        <div class="card">
+            <div class="card-body">
+                <h3>Cliente: {{cliente?.nome}}</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Subtotal</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of products">
+                            <td>{{item.id}}</td>
+                            <td>{{item.descricao}}</td>
+                            <td>{{item.valor | currency: "BRL"}}</td>
+                            <td>
+                                <input type="number" [(ngModel)]="item.quantidade" class="form-control"
+                                    (ngModelChange)="calcularTotalProduto(item)">
+                            </td>
+                            <td>
+                                {{item.subtotal | currency}}
+                            </td>
+                            <td>
+                                <button class="btn btn-success" [disabled]="!item.quantidade">COMPRAR</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

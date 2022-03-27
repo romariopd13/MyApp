@@ -1,0 +1,87 @@
+.example-card {
+  width: 450px;
+  max-width: 450px;
+  border-radius: 3px;
+  padding: 50px 50px 30px 50px;
+}
+mat-card-title{
+  /* font-family: Raleway-Black; */
+  font-size: 30px;
+  font-weight: bold;
+  color: #333333;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  display: block;
+  padding-bottom: 20px
+}
+mat-form-field mat-icon{
+  color: #999;
+}
+.example-form{
+  width: 100%;
+  margin-top: 30px;
+}
+.example-full-width {
+  width: 100%;
+}
+
+.button-entrar{
+      text-transform: uppercase;
+}
+.divtexto{
+  width: 100%;
+  padding-bottom: 22px;
+  padding-top: 30px;
+}
+.divtexto p, .footer-text-login p{
+  color: #999999;
+}
+.login-social{
+  display: flex;
+  text-align: center;
+}
+
+.btn-face, .btn-google {
+    font-size: 16px;
+    line-height: 1.2;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.btn-face a{
+    color: #3b5998;
+    
+}
+.btn-google a{
+    color: #555555;
+}
+.btn-face a, .btn-google a{
+  font-weight: 600;
+  text-decoration: none;
+}
+.footer-text-login{
+   width: 100%;
+  padding-top: 40px;
+}
+.footer-text-login p a{
+  color: rgb(0, 123, 255);
+  text-decoration: none;
+}
+.footer-text-login p a:hover{
+  color: rgb(0, 123, 255);
+  cursor: pointer;
+}

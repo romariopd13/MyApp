@@ -1,0 +1,48 @@
+<div class="pt-3 mb-3 border-bottom">
+    <h1 class="h2">Lista de Produtos</h1>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <button type="button" class="btn btn-success" (click)="openDialogFormularioProduct()">NOVO PRODUTO</button>
+    </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <input type="search" class="form-control" placeholder="Pesquise...">
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of data">
+                            <td>{{item.id}}</td>
+                            <td>{{item.descricao}}</td>
+                            <td>{{item.valor | currency: "BRL"}}</td>
+                            <td>
+                                <a href="javascript:void(0)" (click)="openDialogFormularioProduct(item)">
+                                    <mat-icon aria-hidden="true" style="color: #f0ad4e;" aria-label="Example home icon">
+                                        edit
+                                    </mat-icon>
+                                </a>
+                                <a href="javascript:void(0)" (click)="destroy(item)">
+                                    <mat-icon aria-hidden="true" style="color: #d9534f;" aria-label="Example home icon">
+                                        delete
+                                    </mat-icon>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

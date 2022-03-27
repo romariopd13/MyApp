@@ -1,0 +1,58 @@
+<section fxLayoutAlign="center center" style="width: 100%; height: 100vh; background-color: #007bff;">
+    <div class="container">
+        <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
+            <div class="d-flex align-items-center">
+                <mat-card class="example-card">
+                    <mat-card-title>Conecte-se</mat-card-title>
+                    <mat-card-content>
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width" appearance="fill" color="primary">
+                                <mat-icon matPrefix>email</mat-icon>
+                                <mat-label>Email</mat-label>
+                                <input matInput placeholder="Placeholder">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width" appearance="fill" color="primary">
+                                <mat-icon matPrefix>enhanced_encryption</mat-icon>
+                                <mat-label>Senha</mat-label>
+                                <input matInput [type]="hide ? 'password' : 'text'">
+                                <button mat-icon-button matSuffix (click)="hide = !hide"
+                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                                </button>
+                            </mat-form-field>
+                            <div class="p-t-25">
+                                <button type="button" class="btn btn-primary btn-block button-entrar">Entrar</button>
+                            </div>
+                            <div class="text-center divtexto">
+                                <p>Ou faça login com</p>
+                            </div>
+                            <div class="login-social">
+                                <div class="col-md-6 ">
+                                    <div class="btn-face">
+                                        <a href="" class=""><i class="fab fa-facebook-square"
+                                                style="margin-right: 5px; font-size: 20px;"></i>
+                                            Facebook</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <div class="btn-google">
+                                        <a href="javascript:void(0)" (click)="authService.GoogleAuth()">
+                                            <img src="../../assets/icons/icon-google.png"
+                                                style="margin-right: 5px; width: 19px;" alt="G">
+                                            Google
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center footer-text-login">
+                                <p>Não é um membro? <a routerLink="/register">Inscreva-se
+                                        agora</a></p>
+                            </div>
+
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</section>

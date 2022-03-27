@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    <span routerLink="/home/compra">My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+        matTooltip="Home" routerLink="/home/compra">
+        <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+        matTooltip="Produtos" routerLink="/home/products">
+        <mat-icon>dashboard</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+        matTooltip="Clientes" routerLink="/home/clients">
+        <mat-icon>groups</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+        matTooltip="Meu Perfil" routerLink="/home/profile">
+        <mat-icon>person</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" matTooltip="Sair"
+        (click)="authService.SignOut()">
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
